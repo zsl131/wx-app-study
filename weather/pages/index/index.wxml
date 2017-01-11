@@ -1,0 +1,19 @@
+<view class="main-container">
+    <view class="today">
+        <view class="city">{{city}}</view>
+        <view class="date">{{curWd.date}} {{curWd.week}}</view>
+
+        <view class="temp">{{curWd.curTemp}}</view>
+        <view class="weather">{{curWd.type}} {{curWd.lowtemp}}/{{curWd.hightemp}}</view>
+        <view class="wd">{{curWd.wd}}</view>
+    </view>
+
+    <import src="../templates/index-tpl"/>
+    
+    <view class="index-content">
+        <view wx:for="{{indexs}}" wx:key="item">
+            <template is="index-tpl" data="{{item}}"></template>
+        </view>
+    </view>
+
+</view>

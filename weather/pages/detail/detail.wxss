@@ -34,21 +34,8 @@ page {
     font-size:26rpx; line-height:40rpx; color:#eee;
 }
 .index-name {
-    padding-top:10rpx; width:42%; margin-left:5%; float:left;
+    padding-top:10rpx;
 }
 .index-detail {
     border-bottom:1px #999 solid; padding-bottom:8rpx; font-size:18rpx;
-}
-
-.forecast {
-    width:100%; float:left; margin-top:40rpx; 
-    display: flex; flex-direction: row;
-}
-
-.forecast-item {
-    width:23.25%; margin-left:1%; border:1px #bbb solid; border-radius: 5px;
-    box-shadow: 5px 5px 5px #888888;
-}
-.forecast-item view {
-    font-size:26rpx; line-height:50rpx;
 }

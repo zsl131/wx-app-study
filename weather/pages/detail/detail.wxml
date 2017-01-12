@@ -1,10 +1,10 @@
 <view class="main-container">
     <import src="../templates/today-tpl"/>
-    <view bindtap="gotoDetail">
+    <view>
     <template is="today-tpl" data="{{city, curWd}}"/>
     </view>
 
-    <import src="../templates/index-tpl"/>
+    <import src="../templates/index-detail-tpl"/>
     
     <view class="index-content">
         <block wx:for="{{indexs}}" wx:key="item" wx:for-index="idx">
@@ -12,12 +12,4 @@
             <!--<view class="index-name">{{idx}}-{{item.name}}：{{item.index}}</view>-->
         </block>
     </view>
-
-    <import src="../templates/forecast-tpl"/>
-    <view class="forecast">
-        <block wx:for="{{forecast}}" wx:key="item">
-            <template is="forecast-tpl" data="{{item}}"/>
-        </block>
-    </view>
-
 </view>

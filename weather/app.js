@@ -24,7 +24,8 @@ App({
       })
     }
   },
-  globalData:{
+  globalData:{ //全局变量
+    weatherApikey : "77c92a1703a2d96a86b9a60c593481a4",
     userInfo:null
   }
 })

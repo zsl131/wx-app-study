@@ -1,13 +1,17 @@
-var weatherApikey = "77c92a1703a2d96a86b9a60c593481a4";
+//var weatherApikey = "77c92a1703a2d96a86b9a60c593481a4";
 Page({
 
   data:{
+    weatherApikey:'',
     city:'',
+    areaid:'',
     curWd:{},
-    indexs:{}
+    indexs:{},
+    forecast:{}
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+    this.setData({weatherApikey:getApp().globalData.weatherApikey});
     this.loadLocation();
   },
   onReady:function(){
@@ -69,14 +73,10 @@ Page({
         // header: {}, // 设置请求的 header
         success: function(res){
           // success
-          //console.log(res.data.result.address_component.city);
-            console.log(res);
             var city = res.data.result.address_component.city;
             city = city.replace("市", ""); //将“市”去掉，要不然取不了
             page.setData({city: city});
             page.loadId(city);
-
-         //console.log(res);
         }
       })
   },
@@ -91,14 +91,14 @@ Page({
             cityname: city
         },
         header: {
-            apikey:weatherApikey
+            apikey:page.data.weatherApikey
         }, 
         method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-        // header: {}, // 设置请求的 header
         success: function(res){
           // success
           var cityid = res.data.retData[0].area_id;
 
+          page.setData({areaid: cityid});
           page.loadWeather(city, cityid);
         }
       })
@@ -115,17 +115,20 @@ Page({
             cityid: areaId
         },
         header: {
-            apikey: weatherApikey
+            apikey: page.data.weatherApikey
         },
         method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-        // header: {}, // 设置请求的 header
         success: function(res){
           // success
-          console.log(res);
-
-          console.info(res.data.retData.forecast[0]);
-          page.setData({curWd : res.data.retData.today, indexs: res.data.retData.today.index});
+          page.setData({curWd : res.data.retData.today, indexs: res.data.retData.today.index, forecast:res.data.retData.forecast});
         }
       })
+  },
+
+  gotoDetail: function(event) {
+    // console.log(this.data.areaid+"==在这里跳转=="+this.data.city);
+    wx.navigateTo({
+      url: '../detail/detail?city='+this.data.city+"&cityid="+this.data.areaid
+    })
   }
 })

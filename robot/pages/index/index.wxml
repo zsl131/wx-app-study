@@ -1,0 +1,20 @@
+<view class="main-container">
+
+    <scroll-view class="content" scroll-y="true">
+        <import src="../templates/me-tpl"/>
+        <import src="../templates/robot-tpl"/>
+        <block wx:for="{{content}}" wx:key="item">
+            <template wx:if="{{item.isRobot}}" is="robot-tpl" data="{{item}}"/>
+            <template wx:if="{{!item.isRobot}}" is="me-tpl" data="{{item}}"/>
+        </block>
+    </scroll-view>
+
+    <view class="sender-container">
+        <view style="flex-grow:1">
+            <input placeholder="输入您的问题" value="{{q}}" bindinput="inputEvent"/>
+        </view>
+        <view>
+        <button type="primary" bindtap="queryAnswer">发送</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,9 @@
+<template name="robot-tpl">
+    <view class="robot">
+        <image src="../imgs/robot.png" mode="widthFix" style="width:50px; height:50px;"/>
+        <view>
+            <text class="date">{{item.date}}</text>
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+</template>

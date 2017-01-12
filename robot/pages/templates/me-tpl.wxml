@@ -1,0 +1,9 @@
+<template name="me-tpl">
+    <view class="me">
+        <image src="../imgs/me.png"/>
+        <view>
+            <text class="date">{{item.date}}</text>
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+</template>

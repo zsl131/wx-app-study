@@ -2,12 +2,12 @@
 Page({
 
   data:{
-    weatherApikey:'',
-    city:'',
-    areaid:'',
-    curWd:{},
-    indexs:{},
-    forecast:{}
+    weatherApikey:'', //天气apikey，在http://apistore.baidu.com 上申请
+    city:'', //城市名称
+    areaid:'', //城市对应的id
+    curWd:{}, //当天天气情况
+    indexs:{}, //当天天气详情说明
+    forecast:{} //未来4天的天气情况
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载

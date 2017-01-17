@@ -1,0 +1,6 @@
+/* pages/index/index.wxss */
+
+.my-view {
+    text-align: center; height:120px; margin:10px; background:#fafafa;
+    border:1px #ddd solid; border-radius:5px; line-height: 120px;
+}

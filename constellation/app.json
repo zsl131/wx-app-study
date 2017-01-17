@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/history/index",
     "pages/qq/index",
-    "pages/index/index",
     "pages/constellation-detail/index"
   ],
   "window":{

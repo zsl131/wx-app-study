@@ -1,0 +1,4 @@
+<!--pages/video/index.wxml-->
+<view class="title">视频播放</view>
+<video src="{{url}}" autoplay="true" controls></video>
+
